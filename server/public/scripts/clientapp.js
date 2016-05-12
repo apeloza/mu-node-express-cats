@@ -9,7 +9,7 @@ $(document).ready(function() {
 
     $.ajax({
       type: 'POST',
-      url: '/felines',
+      url: '/cats',
       data: values,
       success: function(response) {
         if(response == true) {
@@ -18,7 +18,7 @@ $(document).ready(function() {
           alert("Something went wrong");
         }
       }
-    })
+    });
 
   });
 
@@ -26,7 +26,7 @@ $(document).ready(function() {
   function getCats() {
     $.ajax({
       type: 'GET',
-      url: '/felines',
+      url: '/cats',
       success: function(data) {
         $('#cat-container').empty();
         data.forEach(function(cat, i) {
