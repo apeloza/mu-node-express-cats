@@ -5,7 +5,11 @@ var bodyParser = require('body-parser');
 var index = require('./routes/index');
 var catsArray = require('./routes/cats');
 
-app.set('port', 5000);
+// set the port of our application
+// process.env.PORT lets the port be set by Heroku
+var port = process.env.PORT || 5000;
+
+app.set('port', port);
 
 app.use(bodyParser.urlencoded({extended: true}));
 
